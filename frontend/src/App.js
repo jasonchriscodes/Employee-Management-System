@@ -1,13 +1,8 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-  return (
-    <div className="bg-gray-800">
-      <div className="h-16 px-8 flex items-center">
-        <p className="text-white font-bold">Employee Management System</p>
-      </div>
-    </div>
-  );
+  return <Navbar />;
 }
 
 export default App;
