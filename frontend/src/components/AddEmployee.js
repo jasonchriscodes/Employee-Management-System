@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddEmployee = () => {
+  const [employee, setEmployee] = useState({
+    id: "",
+    firsName: "",
+    lastName: "",
+    emailId: "",
+  });
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setEmployee({ ...employee, [e.target.name]: value });
+  };
+
   return (
     <div className="flex max-w-2xl shadow border-b mx-auto">
       <div className="px-8 py-8">
@@ -13,6 +25,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="text"
+            name="firsName"
+            value={employee.firstName}
+            onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
         </div>
@@ -22,6 +37,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="text"
+            name="lastName"
+            value={employee.lastName}
+            onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
         </div>
@@ -31,6 +49,9 @@ const AddEmployee = () => {
           </label>
           <input
             type="email"
+            name="emailId"
+            value={employee.emailId}
+            onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"
           ></input>
         </div>
