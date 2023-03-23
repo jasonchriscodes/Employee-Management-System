@@ -4,7 +4,7 @@ import EmployeeService from "../services/EmployeeService";
 const AddEmployee = () => {
   const [employee, setEmployee] = useState({
     id: "",
-    firsName: "",
+    firstName: "",
     lastName: "",
     emailId: "",
   });
@@ -37,7 +37,7 @@ const AddEmployee = () => {
           </label>
           <input
             type="text"
-            name="firsName"
+            name="firstName"
             value={employee.firstName}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"
