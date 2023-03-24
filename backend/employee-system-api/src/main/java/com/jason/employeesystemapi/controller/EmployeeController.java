@@ -2,7 +2,6 @@ package com.jason.employeesystemapi.controller;
 
 import com.jason.employeesystemapi.model.Employee;
 import com.jason.employeesystemapi.services.EmployeeService;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,5 +47,12 @@ public class EmployeeController {
     Map<String, Boolean> response = new HashMap<>();
     response.put("deleted", deleted);
     return ResponseEntity.ok(response);
+  }
+
+  @GetMapping("/employees/{id}")
+  public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+    Employee employee = null;
+    employee = employeeService.getEmployeeById(id);
+    return ResponseEntity.ok(employee);
   }
 }

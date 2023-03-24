@@ -50,4 +50,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     employeeRepository.delete(employee);
     return true;
   }
+
+  @Override
+  public Employee getEmployeeById(Long id) {
+    EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
+    Employee employee = new Employee();
+    BeanUtils.copyProperties(employeeEntity, employee);
+    return employee;
+  }
 }
