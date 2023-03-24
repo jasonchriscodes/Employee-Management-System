@@ -6,6 +6,7 @@ import com.jason.employeesystemapi.repository.EmployeeRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -41,5 +42,12 @@ public class EmployeeServiceImpl implements EmployeeService {
       )
       .collect(Collectors.toList());
     return employees;
+  }
+
+  @Override
+  public boolean deleteEmployee(Long id) {
+    EmployeeEntity employee = employeeRepository.findById(id).get();
+    employeeRepository.delete(employee);
+    return true;
   }
 }
