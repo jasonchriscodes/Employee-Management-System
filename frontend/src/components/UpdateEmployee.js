@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 
 const UpdateEmployee = () => {
-  const [id] = useParams();
+  const { id } = useParams();
   const [employee, setEmployee] = useState({
     id: id,
     firstName: "",
