@@ -6,7 +6,6 @@ import com.jason.employeesystemapi.repository.EmployeeRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -60,7 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   }
 
   @Override
-  public Employee updateEmployee(long id, Employee employee) {
+  public Employee updateEmployee(Long id, Employee employee) {
     EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
     employeeEntity.setEmailId(employee.getEmailId());
     employeeEntity.setFirstName(employee.getFirstName());

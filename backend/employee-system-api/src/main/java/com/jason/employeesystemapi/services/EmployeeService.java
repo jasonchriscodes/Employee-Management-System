@@ -12,5 +12,5 @@ boolean deleteEmployee(Long id);
 
 Employee getEmployeeById(Long id);
 
-Employee updateEmployee(long id, Employee employee);
+Employee updateEmployee(Long id, Employee employee);
 }
