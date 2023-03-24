@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 
 const UpdateEmployee = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [employee, setEmployee] = useState({
     id: id,
     firstName: "",
@@ -81,7 +82,10 @@ const UpdateEmployee = () => {
           >
             Update
           </button>
-          <button className="rounded text-white font-semibold bg-red-400 py-2 px-6 hover:bg-red-700">
+          <button
+            onClick={() => navigate("/employeeList")}
+            className="rounded text-white font-semibold bg-red-400 py-2 px-6 hover:bg-red-700"
+          >
             Cancel
           </button>
         </div>
